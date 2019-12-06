@@ -35,3 +35,22 @@ Stream<String> StreamVR(File image, String apikey) async* {
       .className;
   yield out;
 }
+
+Stream<String> StreamMyClassifier(
+    File image, String apikey, String Classifier_id) async* {
+  IamOptions options = await IamOptions(
+          iamApiKey: apikey,
+          url: "https://gateway.watsonplatform.net/visual-recognition/api")
+      .build();
+  IBMVisualRecognition visualRecognition =
+      new IBMVisualRecognition(iamOptions: options, language: Language.ENGLISH);
+  ClassifiedImages classifiedImages =
+      await visualRecognition.MyClassifier_classifyImageFile(
+          image.path, Classifier_id);
+  String out = classifiedImages
+      .getImages()[0]
+      .getClassifiers()[0]
+      .getClasses()[0]
+      .className;
+  yield out;
+}
