@@ -6,9 +6,9 @@ import 'IBMVisualRecognition.dart';
 import 'package:flutter_ibm_watson/utils/IamOptions.dart';
 import 'package:flutter_ibm_watson/utils/Language.dart';
 
-void ProcessIMGURL(url) async {
+void ProcessIMGURL(String url, String apikey) async {
   var uname = 'apikey';
-  var pword = 'dMmIylYjTTp-4DTK6qw5mx_t3LAcJIuPYZsOrZWdhuvz';
+  var pword = apikey;
   var authn = 'Basic ' + base64Encode(utf8.encode('$uname:$pword'));
   //url=https://www.lifeprint.com/asl101/signjpegs/b/b3.jpg
   var res = await http.get(
@@ -19,9 +19,9 @@ void ProcessIMGURL(url) async {
   print(res.body);
 }
 
-Stream<String> StreamVR(File image) async* {
+Stream<String> StreamVR(File image, String apikey) async* {
   IamOptions options = await IamOptions(
-          iamApiKey: "dMmIylYjTTp-4DTK6qw5mx_t3LAcJIuPYZsOrZWdhuvz",
+          iamApiKey: apikey,
           url: "https://gateway.watsonplatform.net/visual-recognition/api")
       .build();
   IBMVisualRecognition visualRecognition =

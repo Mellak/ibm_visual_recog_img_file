@@ -179,7 +179,6 @@ class IBMVisualRecognition {
     var request =
         new http.MultipartRequest("POST", Uri.parse(_getUrlFile("classify")));
     request.fields['threshold'] = this.threshold.toString();
-    // request.fields['classifier_ids'] = "DefaultCustomModel_1093175042";
     var file = await http.MultipartFile.fromPath("images_file", filePath,
         contentType: new MediaType('application', '*'));
     await print('here inside the class ' + filePath);

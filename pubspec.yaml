@@ -1,6 +1,6 @@
 name: ibm_visual_recog_img_file
 description: A flutter package to implement  IBM visual recognition in your project, using images on your phone and your own classifier on IBM services
-version: 0.0.1
+version: 1.0.0
 author: MELLAK Youness <lmellakyouness@gmail.com>
 homepage: https://github.com/Mellak/ibm_visual_recog_img_file
 
