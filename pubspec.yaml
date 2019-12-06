@@ -1,6 +1,6 @@
 name: ibm_visual_recog_img_file
 description: A flutter package to implement  IBM visual recognition in your project, using images on your phone and your own classifier on IBM services
-version: 2.0.0
+version: 2.0.1
 author: MELLAK Youness <lmellakyouness@gmail.com>
 homepage: https://github.com/Mellak/ibm_visual_recog_img_file
 
@@ -10,11 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  path_provider: ^1.1.0
+  path: ^1.6.2
+  flutter_ibm_watson: ^0.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_ibm_watson: ^0.0.2
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
